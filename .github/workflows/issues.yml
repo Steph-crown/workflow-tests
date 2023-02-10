@@ -1,0 +1,15 @@
+name: Move assigned issues to In Progress
+
+on:
+  issues:
+    types: [assigned]
+
+jobs:
+  move-issue:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.8.3
+        with:
+          project: "Discovery UI"
+          column: "In Progress"
+          repo-token: ${{ secrets.GH_API_TOKEN }}
